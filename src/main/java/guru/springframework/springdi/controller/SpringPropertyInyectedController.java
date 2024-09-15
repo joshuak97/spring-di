@@ -2,6 +2,7 @@ package guru.springframework.springdi.controller;
 
 import guru.springframework.springdi.service.GreetingSpringService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 
 /**
@@ -11,6 +12,7 @@ import org.springframework.stereotype.Controller;
 @Controller
 public class SpringPropertyInyectedController {
 
+    @Qualifier("propertyGreetingSpringService")
     @Autowired
     public GreetingSpringService greetingSpringService;
 
