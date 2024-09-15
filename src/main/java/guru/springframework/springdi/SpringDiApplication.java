@@ -1,9 +1,6 @@
 package guru.springframework.springdi;
 
-import guru.springframework.springdi.controller.MyController;
-import guru.springframework.springdi.controller.SpringConstructorInyectedController;
-import guru.springframework.springdi.controller.SpringPropertyInyectedController;
-import guru.springframework.springdi.controller.SpringSetterInyectedController;
+import guru.springframework.springdi.controller.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
@@ -39,6 +36,11 @@ public class SpringDiApplication {
 
         var controllerSpringConstructor = context.getBean("springConstructorInyectedController", SpringConstructorInyectedController.class);
         log.info(controllerSpringConstructor.sayHello());
+
+        log.info("******** DI With Spring Primary Bean ***********");
+
+        var controllerSpringPrimary = context.getBean("springPrimaryBeanInyectedController", SpringPrimaryBeanInyectedController.class);
+        log.info(controllerSpringPrimary.greet());
     }
 
 }
