@@ -1,6 +1,7 @@
 package guru.springframework.springdi;
 
 import guru.springframework.springdi.controller.MyController;
+import guru.springframework.springdi.controller.SpringInyectedController;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
@@ -16,11 +17,16 @@ public class SpringDiApplication {
 
         ApplicationContext context = SpringApplication.run(SpringDiApplication.class, args);
 
-        MyController myController = (MyController) context.getBean("myController");
+        MyController myController = context.getBean("myController", MyController.class);
 
         String greeting = myController.sayHello();
 
         log.info(greeting);
+
+        log.info("******** DI With Spring ***********");
+
+        var controllerSpring = context.getBean("springInyectedController", SpringInyectedController.class);
+        log.info(controllerSpring.greeting());
     }
 
 }
