@@ -1,7 +1,9 @@
 package guru.springframework.springdi;
 
 import guru.springframework.springdi.controller.MyController;
-import guru.springframework.springdi.controller.SpringInyectedController;
+import guru.springframework.springdi.controller.SpringConstructorInyectedController;
+import guru.springframework.springdi.controller.SpringPropertyInyectedController;
+import guru.springframework.springdi.controller.SpringSetterInyectedController;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
@@ -23,10 +25,20 @@ public class SpringDiApplication {
 
         log.info(greeting);
 
-        log.info("******** DI With Spring ***********");
+        log.info("******** DI With Spring Property ***********");
 
-        var controllerSpring = context.getBean("springInyectedController", SpringInyectedController.class);
-        log.info(controllerSpring.greeting());
+        var controllerSpringProperty = context.getBean("springPropertyInyectedController", SpringPropertyInyectedController.class);
+        log.info(controllerSpringProperty.greeting());
+
+        log.info("******** DI With Spring Setter ***********");
+
+        var controllerSpringSetter = context.getBean("springSetterInyectedController", SpringSetterInyectedController.class);
+        log.info(controllerSpringSetter.greet());
+
+        log.info("******** DI With Spring Constructor ***********");
+
+        var controllerSpringConstructor = context.getBean("springConstructorInyectedController", SpringConstructorInyectedController.class);
+        log.info(controllerSpringConstructor.sayHello());
     }
 
 }

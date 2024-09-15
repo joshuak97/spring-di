@@ -1,6 +1,5 @@
 package guru.springframework.springdi.controller;
 
-import guru.springframework.springdi.service.GreetingService;
 import guru.springframework.springdi.service.GreetingSpringService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -10,7 +9,7 @@ import org.springframework.stereotype.Controller;
  *  In this controller we show an example of dependency injection without Spring through a Property.
  */
 @Controller
-public class SpringInyectedController {
+public class SpringPropertyInyectedController {
 
     @Autowired
     public GreetingSpringService greetingSpringService;
