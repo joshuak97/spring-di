@@ -20,7 +20,7 @@ class ConstructorInyectedControllerTest {
     }
 
     @Test
-    void sayHello() {
+    void greet() {
         log.info(controller.sayHello());
     }
 }
