@@ -10,6 +10,10 @@ public class MyController {
 
     private static final Logger log = LoggerFactory.getLogger(MyController.class);
 
+    /**
+     * Say Hello
+     * @return String
+     */
     public String sayHello() {
         log.info("Hello Folks!");
         return "Hello World";
