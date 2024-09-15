@@ -41,6 +41,11 @@ public class SpringDiApplication {
 
         var controllerSpringPrimary = context.getBean("springPrimaryBeanInyectedController", SpringPrimaryBeanInyectedController.class);
         log.info(controllerSpringPrimary.greet());
+
+        log.info("******** DI With Spring I18N English ***********");
+
+        var i18nControllerEn = context.getBean("i18NController", I18NController.class);
+        log.info(i18nControllerEn.sayGreeting());
     }
 
 }
